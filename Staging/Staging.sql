@@ -164,3 +164,4 @@ CREATE TABLE [dbo].[StgTests](
 GO
 
 --Prueba
+--Otra prueba
