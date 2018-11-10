@@ -103,9 +103,14 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+ALTER DATABASE [Staging] ADD FILEGROUP [FGStgProducts]
+GO
+ALTER DATABASE [Staging] ADD FILE ( NAME = N'StgProducts', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\DATA\StgProducts.ndf' , SIZE = 8192KB , FILEGROWTH = 65536KB ) TO FILEGROUP [FGStgProducts]
+GO
+
 CREATE TABLE [dbo].[StgProducts](
-	[RecordKey] [int] NOT NULL,
-	[CheckSumIndicator] [int] NOT NULL,
+	[RecordKey] int IDENTITY(1,1),
+	[CheckSumIndicator] as  checksum(ProductId,ProductName,CategoryName,LotNumber,LineNumber),
 	[ProductId] [varchar](50) NOT NULL,
 	[ProductName] [varchar](100) NOT NULL,
 	[CategoryName] [varchar](100) NOT NULL,
@@ -120,7 +125,7 @@ CREATE TABLE [dbo].[StgProducts](
 (
 	[RecordKey] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
+) ON [FGStgProducts]
 GO
 /****** Object:  Table [dbo].[StgRoot]    Script Date: 04/11/2018 06:33:08 ******/
 SET ANSI_NULLS ON
