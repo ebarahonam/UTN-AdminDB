@@ -5,14 +5,23 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
+
+ALTER DATABASE [Staging] ADD FILEGROUP [FGStgClaims]
+GO
+ALTER DATABASE [Staging] 
+ADD FILE (NAME = N'StgClaims', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL14.SERVERMANU2017\MSSQL\DATA\FGStgClaims.mdf',  SIZE = 8192KB , FILEGROWTH = 65536KB )
+TO FILEGROUP [FGStgClaims]
+GO
+
 CREATE TABLE [dbo].[StgClaims](
-	[RecordKey] [int] NOT NULL,
-	[CheckSumIndicator] [int] NOT NULL,
+	[RecordKey] [int] IDENTITY(1,1) NOT NULL,
+	[CheckSumIndicator]  AS 
+	(checksum([RecordKey],[ClaimId],[LotNumber],[LineProd],[DateLot],[ProductId],[CustomerId],[DefectQty],[UnitReturnQty],[DefectId])),
 	[ClaimId] [int] NOT NULL,
 	[LotNumber] [varchar](50) NOT NULL,
 	[LineProd] [int] NOT NULL,
 	[DateLot] [date] NOT NULL,
-	[ProductId] [int] NOT NULL,
+	[ProductId] [varchar](50) NOT NULL,
 	[CustomerId] [int] NOT NULL,
 	[DefectQty] [int] NOT NULL,
 	[UnitReturnQty] [int] NOT NULL,
