@@ -30,7 +30,7 @@ CREATE TABLE [dbo].[StgClaims](
 (
 	[RecordKey] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
+)  ON [FGStgClaims]
 GO
 /****** Object:  Table [dbo].[StgCustomer]    Script Date: 04/11/2018 06:33:08 ******/
 SET ANSI_NULLS ON
