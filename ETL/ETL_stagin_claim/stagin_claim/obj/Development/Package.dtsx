@@ -1,0 +1,865 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/16/2018 11:09:43 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="JOMA15"
+  DTS:CreatorName="JOMA15\Manuel Sibaja"
+  DTS:DTSID="{9CD8CD43-79C1-4BDB-A0E9-C683596BDB92}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3026.27"
+  DTS:LocaleID="5130"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="23"
+  DTS:VersionGUID="{CEBB507D-1DFC-443E-8EBC-1A8EC445B573}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[JOMA15\SERVERMANU2017.Staging.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9D97309F-D12E-4587-AF70-2268988CEF9E}"
+      DTS:ObjectName="JOMA15\SERVERMANU2017.Staging.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=JOMA15\SERVERMANU2017;User ID=sa;Initial Catalog=Staging;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA8RX3r1jW60WsDTOt9+POVQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAC7ojinFm3ES1NrANAwRdBgaNEh2zVf+6O9y4Azmzew4QAAAAAOgAAAAAIAACAAAAD9tXJ3ByJ8EIDZr3QqTVhqc8CdGjEeBVcUOlgFWvcqchAAAAD6HEOifhWQ2JLAJIUXoF26QAAAAHuR8Shp7+ArVOjzBSXwINB00EJOIDP97C8ygvIlWYDSZCjspWJrmK5ClQCYmfp2K4F4YOUCfD978RMk/qwsEvw</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[stangin_mysql_server.root]"
+      DTS:CreationName="ODBC"
+      DTS:DTSID="{8795CE3C-B2C6-4D23-B647-A085F0660EF1}"
+      DTS:ObjectName="stangin_mysql_server.root">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="uid=root;Dsn=stangin_mysql_server;">
+          <DTS:Password
+            DTS:Name="pwd"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA8RX3r1jW60WsDTOt9+POVQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABM9pV7P6gf94tX97wWDNVjCHCgdekvAzR8UfaV8StXdgAAAAAOgAAAAAIAACAAAABQddfItb5rdjeUNJmKDDF5tIDB0UN8uaFWpwOuZNN/GRAAAAANmYo2who6TIP/hfzwZNizQAAAAAjfkK9YjjTVfEbtG+NPxnZDzyyPiIDmp1U/EE3YnwRpQ9BIl+7uEpg+srCjhe+9rha/rgV2PPRC6tTut+fip0Q</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Sequence Container"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{1C1C413F-1BCA-4E30-A580-D54C6CB943BC}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Sequence Container">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Insert table Claims"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{AC43E93F-9E3E-4137-BF53-56AD8D637E3A}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Insert table Claims"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence Container\Insert table Claims\CONVERTION DATA"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="CONVERTION DATA"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Insert table Claims\CONVERTION DATA.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Insert table Claims\CONVERTION DATA.Inputs[Data Conversion Input].Columns[typeClaim]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="typeClaim"
+                          lineageId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].Columns[typeClaim]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Insert table Claims\CONVERTION DATA.Inputs[Data Conversion Input].Columns[customer]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="customer"
+                          lineageId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].Columns[customer]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Insert table Claims\CONVERTION DATA.Inputs[Data Conversion Input].Columns[LineId]"
+                          cachedDataType="i2"
+                          cachedName="LineId"
+                          lineageId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].Columns[LineId]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Insert table Claims\CONVERTION DATA.Inputs[Data Conversion Input].Columns[idClaim]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="idClaim"
+                          lineageId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].Columns[idClaim]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Insert table Claims\CONVERTION DATA.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\Sequence Container\Insert table Claims\CONVERTION DATA.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Insert table Claims\CONVERTION DATA.Outputs[Data Conversion Output].Columns[new_ typeClaim]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Sequence Container\Insert table Claims\CONVERTION DATA.Outputs[Data Conversion Output].Columns[new_ typeClaim]"
+                          name="new_ typeClaim"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].Columns[typeClaim]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Insert table Claims\CONVERTION DATA.Outputs[Data Conversion Output].Columns[new_customer]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Sequence Container\Insert table Claims\CONVERTION DATA.Outputs[Data Conversion Output].Columns[new_customer]"
+                          name="new_customer"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].Columns[customer]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Insert table Claims\CONVERTION DATA.Outputs[Data Conversion Output].Columns[new_LineId]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Sequence Container\Insert table Claims\CONVERTION DATA.Outputs[Data Conversion Output].Columns[new_LineId]"
+                          name="new_LineId"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].Columns[LineId]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Insert table Claims\CONVERTION DATA.Outputs[Data Conversion Output].Columns[new_idClaim]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Sequence Container\Insert table Claims\CONVERTION DATA.Outputs[Data Conversion Output].Columns[new_idClaim]"
+                          name="new_idClaim"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].Columns[idClaim]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Insert table Claims\CONVERTION DATA.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\Sequence Container\Insert table Claims\CONVERTION DATA.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Insert table Claims\CONVERTION DATA.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Insert table Claims\CONVERTION DATA.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Insert table Claims\CONVERTION DATA.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Insert table Claims\CONVERTION DATA.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Insert table Claims\MYSQL DATOS"
+                  componentClassID="Attunity.SSISODBCSrc"
+                  contactInfo="ODBC Source;Connector for Open Database Connectivity (ODBC) by Attunity; Attunity Ltd.; All Rights Reserved; http://www.attunity.com;7"
+                  description="ODBC Source"
+                  name="MYSQL DATOS"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="The name of the table to be fetched."
+                      expressionType="Notify"
+                      name="TableName"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      expressionType="Notify"
+                      name="SqlCommand">select c.idClaim,l.idLot,ll.LineId,l.lotDate,p.idProd,c.customer,c.unitDefect,c.unitReturn,c.typeClaim
+ 
+from Claims as c,Product as p, Lot as l, LotxLines as ll
+	where c.product =  p.idProd
+		
+and p.idProd = l.idProduc
+    
+ and l.idLot = ll.LotId;</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specify the number of rows fetched per batch."
+                      expressionType="Notify"
+                      name="BatchSize">1000</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Determines the chunk size allocation for LOB columns"
+                      expressionType="Notify"
+                      name="LobChunkSize">32768</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines how the component exposes CHAR columns. If False, CHAR columns are exposed as (multi-)byte strings (DT_STR), if True, CHAR columns are exposed as wide strings (DT_WSTR)"
+                      expressionType="Notify"
+                      name="ExposeCharColumnsAsUnicode">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds to wait for an SQL statement to execute before returning to the application."
+                      expressionType="Notify"
+                      name="StatementTimeout">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The code page to use when code page information is unavailable from the data source."
+                      expressionType="Notify"
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The method used for fetching data."
+                      expressionType="Notify"
+                      name="FetchMethod"
+                      typeConverter="FetchMethod">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="The ODBC C data type for binding numeric data."
+                      expressionType="Notify"
+                      name="BindNumericAs"
+                      typeConverter="BindNumericAs">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Determines how the component would bind columns of (multi)-byte string types (i.e., SQL_CHAR, SQL_VARCHAR, SQL_LONGVARCHAR). The options are: Unicode (SQL_C_WCHAR) and ANSI (SQL_C_CHAR)."
+                      expressionType="Notify"
+                      name="BindCharColumnsAs"
+                      typeConverter="BindCharColumnsAs">0</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Connections[ODBCConnection]"
+                      connectionManagerID="Package.ConnectionManagers[stangin_mysql_server.root]"
+                      connectionManagerRefId="Package.ConnectionManagers[stangin_mysql_server.root]"
+                      description="The ODBC runtime connection"
+                      name="ODBCConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output]"
+                      errorRowDisposition="FailComponent"
+                      name="ODBC Source Output"
+                      truncationRowDisposition="FailComponent">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].Columns[idClaim]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].ExternalColumns[idClaim]"
+                          length="50"
+                          lineageId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].Columns[idClaim]"
+                          name="idClaim" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].Columns[idLot]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].ExternalColumns[idLot]"
+                          length="50"
+                          lineageId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].Columns[idLot]"
+                          name="idLot" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].Columns[LineId]"
+                          dataType="i2"
+                          externalMetadataColumnId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].ExternalColumns[LineId]"
+                          lineageId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].Columns[LineId]"
+                          name="LineId" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].Columns[lotDate]"
+                          dataType="dbDate"
+                          externalMetadataColumnId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].ExternalColumns[lotDate]"
+                          lineageId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].Columns[lotDate]"
+                          name="lotDate" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].Columns[idProd]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].ExternalColumns[idProd]"
+                          length="50"
+                          lineageId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].Columns[idProd]"
+                          name="idProd" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].Columns[customer]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].ExternalColumns[customer]"
+                          length="50"
+                          lineageId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].Columns[customer]"
+                          name="customer" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].Columns[unitDefect]"
+                          dataType="i4"
+                          externalMetadataColumnId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].ExternalColumns[unitDefect]"
+                          lineageId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].Columns[unitDefect]"
+                          name="unitDefect" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].Columns[unitReturn]"
+                          dataType="i4"
+                          externalMetadataColumnId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].ExternalColumns[unitReturn]"
+                          lineageId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].Columns[unitReturn]"
+                          name="unitReturn" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].Columns[typeClaim]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].ExternalColumns[typeClaim]"
+                          length="50"
+                          lineageId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].Columns[typeClaim]"
+                          name="typeClaim" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].ExternalColumns[idClaim]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="idClaim" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].ExternalColumns[idLot]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="idLot" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].ExternalColumns[LineId]"
+                          dataType="i2"
+                          name="LineId" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].ExternalColumns[lotDate]"
+                          dataType="dbDate"
+                          name="lotDate" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].ExternalColumns[idProd]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="idProd" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].ExternalColumns[customer]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="customer" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].ExternalColumns[unitDefect]"
+                          dataType="i4"
+                          name="unitDefect" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].ExternalColumns[unitReturn]"
+                          dataType="i4"
+                          name="unitReturn" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].ExternalColumns[typeClaim]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="typeClaim" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Error Output]"
+                      isErrorOut="true"
+                      name="ODBC Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Error Output].Columns[idClaim]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].ExternalColumns[idClaim]"
+                          length="50"
+                          lineageId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Error Output].Columns[idClaim]"
+                          name="idClaim" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Error Output].Columns[idLot]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].ExternalColumns[idLot]"
+                          length="50"
+                          lineageId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Error Output].Columns[idLot]"
+                          name="idLot" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Error Output].Columns[LineId]"
+                          dataType="i2"
+                          externalMetadataColumnId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].ExternalColumns[LineId]"
+                          lineageId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Error Output].Columns[LineId]"
+                          name="LineId" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Error Output].Columns[lotDate]"
+                          dataType="dbDate"
+                          externalMetadataColumnId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].ExternalColumns[lotDate]"
+                          lineageId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Error Output].Columns[lotDate]"
+                          name="lotDate" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Error Output].Columns[idProd]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].ExternalColumns[idProd]"
+                          length="50"
+                          lineageId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Error Output].Columns[idProd]"
+                          name="idProd" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Error Output].Columns[customer]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].ExternalColumns[customer]"
+                          length="50"
+                          lineageId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Error Output].Columns[customer]"
+                          name="customer" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Error Output].Columns[unitDefect]"
+                          dataType="i4"
+                          externalMetadataColumnId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].ExternalColumns[unitDefect]"
+                          lineageId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Error Output].Columns[unitDefect]"
+                          name="unitDefect" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Error Output].Columns[unitReturn]"
+                          dataType="i4"
+                          externalMetadataColumnId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].ExternalColumns[unitReturn]"
+                          lineageId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Error Output].Columns[unitReturn]"
+                          name="unitReturn" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Error Output].Columns[typeClaim]"
+                          codePage="1252"
+                          dataType="str"
+                          externalMetadataColumnId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].ExternalColumns[typeClaim]"
+                          length="50"
+                          lineageId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Error Output].Columns[typeClaim]"
+                          name="typeClaim" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Insert table Claims\SQL DESTINATION"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="SQL DESTINATION"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[StgClaims]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">true</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Insert table Claims\SQL DESTINATION.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[JOMA15\SERVERMANU2017.Staging.sa]"
+                      connectionManagerRefId="Package.ConnectionManagers[JOMA15\SERVERMANU2017.Staging.sa]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Insert table Claims\SQL DESTINATION.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Insert table Claims\SQL DESTINATION.Inputs[OLE DB Destination Input].Columns[idLot]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="idLot"
+                          externalMetadataColumnId="Package\Sequence Container\Insert table Claims\SQL DESTINATION.Inputs[OLE DB Destination Input].ExternalColumns[LotNumber]"
+                          lineageId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].Columns[idLot]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Insert table Claims\SQL DESTINATION.Inputs[OLE DB Destination Input].Columns[lotDate]"
+                          cachedDataType="dbDate"
+                          cachedName="lotDate"
+                          externalMetadataColumnId="Package\Sequence Container\Insert table Claims\SQL DESTINATION.Inputs[OLE DB Destination Input].ExternalColumns[DateLot]"
+                          lineageId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].Columns[lotDate]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Insert table Claims\SQL DESTINATION.Inputs[OLE DB Destination Input].Columns[idProd]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="idProd"
+                          externalMetadataColumnId="Package\Sequence Container\Insert table Claims\SQL DESTINATION.Inputs[OLE DB Destination Input].ExternalColumns[ProductId]"
+                          lineageId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].Columns[idProd]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Insert table Claims\SQL DESTINATION.Inputs[OLE DB Destination Input].Columns[unitDefect]"
+                          cachedDataType="i4"
+                          cachedName="unitDefect"
+                          externalMetadataColumnId="Package\Sequence Container\Insert table Claims\SQL DESTINATION.Inputs[OLE DB Destination Input].ExternalColumns[DefectQty]"
+                          lineageId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].Columns[unitDefect]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Insert table Claims\SQL DESTINATION.Inputs[OLE DB Destination Input].Columns[unitReturn]"
+                          cachedDataType="i4"
+                          cachedName="unitReturn"
+                          externalMetadataColumnId="Package\Sequence Container\Insert table Claims\SQL DESTINATION.Inputs[OLE DB Destination Input].ExternalColumns[UnitReturnQty]"
+                          lineageId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output].Columns[unitReturn]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Insert table Claims\SQL DESTINATION.Inputs[OLE DB Destination Input].Columns[new_ typeClaim]"
+                          cachedDataType="i4"
+                          cachedName="new_ typeClaim"
+                          externalMetadataColumnId="Package\Sequence Container\Insert table Claims\SQL DESTINATION.Inputs[OLE DB Destination Input].ExternalColumns[DefectId]"
+                          lineageId="Package\Sequence Container\Insert table Claims\CONVERTION DATA.Outputs[Data Conversion Output].Columns[new_ typeClaim]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Insert table Claims\SQL DESTINATION.Inputs[OLE DB Destination Input].Columns[new_customer]"
+                          cachedDataType="i4"
+                          cachedName="new_customer"
+                          externalMetadataColumnId="Package\Sequence Container\Insert table Claims\SQL DESTINATION.Inputs[OLE DB Destination Input].ExternalColumns[CustomerId]"
+                          lineageId="Package\Sequence Container\Insert table Claims\CONVERTION DATA.Outputs[Data Conversion Output].Columns[new_customer]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Insert table Claims\SQL DESTINATION.Inputs[OLE DB Destination Input].Columns[new_LineId]"
+                          cachedDataType="i4"
+                          cachedName="new_LineId"
+                          externalMetadataColumnId="Package\Sequence Container\Insert table Claims\SQL DESTINATION.Inputs[OLE DB Destination Input].ExternalColumns[LineProd]"
+                          lineageId="Package\Sequence Container\Insert table Claims\CONVERTION DATA.Outputs[Data Conversion Output].Columns[new_LineId]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Insert table Claims\SQL DESTINATION.Inputs[OLE DB Destination Input].Columns[new_idClaim]"
+                          cachedDataType="i4"
+                          cachedName="new_idClaim"
+                          externalMetadataColumnId="Package\Sequence Container\Insert table Claims\SQL DESTINATION.Inputs[OLE DB Destination Input].ExternalColumns[ClaimId]"
+                          lineageId="Package\Sequence Container\Insert table Claims\CONVERTION DATA.Outputs[Data Conversion Output].Columns[new_idClaim]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Insert table Claims\SQL DESTINATION.Inputs[OLE DB Destination Input].ExternalColumns[RecordKey]"
+                          dataType="i4"
+                          name="RecordKey" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Insert table Claims\SQL DESTINATION.Inputs[OLE DB Destination Input].ExternalColumns[CheckSumIndicator]"
+                          dataType="i4"
+                          name="CheckSumIndicator" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Insert table Claims\SQL DESTINATION.Inputs[OLE DB Destination Input].ExternalColumns[ClaimId]"
+                          dataType="i4"
+                          name="ClaimId" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Insert table Claims\SQL DESTINATION.Inputs[OLE DB Destination Input].ExternalColumns[LotNumber]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="LotNumber" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Insert table Claims\SQL DESTINATION.Inputs[OLE DB Destination Input].ExternalColumns[LineProd]"
+                          dataType="i4"
+                          name="LineProd" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Insert table Claims\SQL DESTINATION.Inputs[OLE DB Destination Input].ExternalColumns[DateLot]"
+                          dataType="dbDate"
+                          name="DateLot" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Insert table Claims\SQL DESTINATION.Inputs[OLE DB Destination Input].ExternalColumns[ProductId]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="ProductId" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Insert table Claims\SQL DESTINATION.Inputs[OLE DB Destination Input].ExternalColumns[CustomerId]"
+                          dataType="i4"
+                          name="CustomerId" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Insert table Claims\SQL DESTINATION.Inputs[OLE DB Destination Input].ExternalColumns[DefectQty]"
+                          dataType="i4"
+                          name="DefectQty" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Insert table Claims\SQL DESTINATION.Inputs[OLE DB Destination Input].ExternalColumns[UnitReturnQty]"
+                          dataType="i4"
+                          name="UnitReturnQty" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Insert table Claims\SQL DESTINATION.Inputs[OLE DB Destination Input].ExternalColumns[DefectId]"
+                          dataType="i4"
+                          name="DefectId" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Insert table Claims\SQL DESTINATION.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Sequence Container\Insert table Claims\SQL DESTINATION.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Insert table Claims\SQL DESTINATION.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Insert table Claims\SQL DESTINATION.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Insert table Claims\SQL DESTINATION.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Insert table Claims\SQL DESTINATION.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence Container\Insert table Claims.Paths[Data Conversion Output]"
+                  endId="Package\Sequence Container\Insert table Claims\SQL DESTINATION.Inputs[OLE DB Destination Input]"
+                  name="Data Conversion Output"
+                  startId="Package\Sequence Container\Insert table Claims\CONVERTION DATA.Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\Sequence Container\Insert table Claims.Paths[ODBC Source Output]"
+                  endId="Package\Sequence Container\Insert table Claims\CONVERTION DATA.Inputs[Data Conversion Input]"
+                  name="ODBC Source Output"
+                  startId="Package\Sequence Container\Insert table Claims\MYSQL DATOS.Outputs[ODBC Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="167,42"
+          Id="Package\Sequence Container\Insert table Claims"
+          TopLeft="76,33" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="357,142"
+          Size="357,185"
+          Id="Package\Sequence Container"
+          TopLeft="238,27" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Sequence Container\Insert table Claims">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="169,42"
+          Id="Package\Sequence Container\Insert table Claims\SQL DESTINATION"
+          TopLeft="670,52" />
+        <NodeLayout
+          Size="149,42"
+          Id="Package\Sequence Container\Insert table Claims\MYSQL DATOS"
+          TopLeft="127,56" />
+        <NodeLayout
+          Size="174,42"
+          Id="Package\Sequence Container\Insert table Claims\CONVERTION DATA"
+          TopLeft="397,58" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Insert table Claims.Paths[ODBC Source Output]"
+          TopLeft="276,78">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="121,0"
+              Start="0,0"
+              End="113.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="113.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container\Insert table Claims.Paths[Data Conversion Output]"
+          TopLeft="571,76">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="99,0"
+              Start="0,0"
+              End="91.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="91.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Insert table Claims\SQL DESTINATION">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Insert table Claims\MYSQL DATOS">
+    <Properties>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
