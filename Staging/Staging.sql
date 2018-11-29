@@ -100,27 +100,28 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[StgInvoices](
-	[RecordKey] [int] NOT NULL,
-	[CheckSumIndicator] [int] NOT NULL,
+	[RecordKey] [int] IDENTITY(1,1) NOT NULL,
+	[CheckSumIndicator]  AS (checksum([InvoiceId],[ProductId],[CustomerId],[LotNumber],[LineProd])),
 	[InvoiceId] [int] NOT NULL,
-	[ProductId] [int] NOT NULL,
+	[ProductId] [varchar](50) NOT NULL,
 	[CustomerId] [int] NOT NULL,
 	[LotNumber] [varchar](50) NOT NULL,
 	[LineProd] [int] NOT NULL,
-	[LoteDate] [date] NOT NULL,
 	[CurrencySymbol] [varchar](1) NOT NULL,
 	[CurrencyNm] [varchar](20) NOT NULL,
-	[SalePriceUnit] [numeric](17, 17) NOT NULL,
-	[DiscountAmnt] [numeric](17, 17) NOT NULL,
-	[SaleAmnt] [numeric](30, 17) NOT NULL,
+	[SalePriceUnit] [float] NOT NULL,
+	[saleQty] [int] NULL,
+	[DiscountAmnt] [int] NOT NULL,
+	[SaleAmnt]  AS ([SalePriceUnit]*[saleQty]-[DiscountAmnt]),
 	[OrderId] [int] NOT NULL,
-	[TotalCostAmnt] [numeric](29, 17) NOT NULL,
+	[TotalCostAmnt]  AS ([SalePriceUnit]*[saleQty]),
  CONSTRAINT [PK_StgInvoices] PRIMARY KEY CLUSTERED 
 (
 	[RecordKey] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+
 /****** Object:  Table [dbo].[StgIssues]    Script Date: 04/11/2018 06:33:08 ******/
 SET ANSI_NULLS ON
 GO
