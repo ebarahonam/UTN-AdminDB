@@ -1,4 +1,4 @@
-﻿use master
+use master
 go
 drop database [Staging]
 go
