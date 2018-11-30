@@ -26,17 +26,18 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[StgClaims](
-	[RecordKey] [int] NOT NULL,
-	[CheckSumIndicator] [int] NOT NULL,
+	[RecordKey] [int] IDENTITY(1,1) NOT NULL,
 	[ClaimId] [int] NOT NULL,
 	[LotNumber] [varchar](50) NOT NULL,
 	[LineProd] [int] NOT NULL,
 	[DateLot] [date] NOT NULL,
-	[ProductId] [int] NOT NULL,
+	[ProductId] [varchar](50) NOT NULL,
 	[CustomerId] [int] NOT NULL,
 	[DefectQty] [int] NOT NULL,
 	[UnitReturnQty] [int] NOT NULL,
 	[DefectId] [int] NOT NULL,
+	[CheckSumIndicator]  AS 
+	(checksum([RecordKey],[ClaimId],[LotNumber],[LineProd],[DateLot],[ProductId],[CustomerId],[DefectQty],[UnitReturnQty],[DefectId])),
  CONSTRAINT [PK_StgClaims] PRIMARY KEY CLUSTERED 
 (
 	[RecordKey] ASC
