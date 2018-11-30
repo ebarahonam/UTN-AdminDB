@@ -100,8 +100,8 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[StgCustomer](
-	[RecordKey] [int] NOT NULL,
-	[CheckSumIndicator] [int] NOT NULL,
+	[RecordKey] [int] NOT NULL IDENTITY(1,1),
+	[CheckSumIndicator] AS CHECKSUM(RecordKey, CustomerNm, CustomerId),
 	[CustomerNm] [varchar](50) NOT NULL,
 	[CustomerId] [int] NOT NULL,
  CONSTRAINT [PK_StgCustomer] PRIMARY KEY CLUSTERED 
@@ -116,8 +116,8 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[StgDefect](
-	[RecordKey] [int] NOT NULL,
-	[CheckSumIndicator] [int] NOT NULL,
+	[RecordKey] [int] NOT NULL IDENTITY(1,1),
+	[CheckSumIndicator] AS CHECKSUM(RecordKey, DefectId, DefectDesc),
 	[DefectId] [int] NOT NULL,
 	[DefectDesc] [varchar](100) NOT NULL,
  CONSTRAINT [PK_StgDefect] PRIMARY KEY CLUSTERED 
@@ -201,18 +201,18 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[StgRoot](
-	[RecordKey] [int] NOT NULL,
-	[CheckSumIndicator] [int] NOT NULL,
-	[LotNumber] [varchar](50) NOT NULL,
-	[LineNumber] [int] NOT NULL,
-	[LoteDate] [date] NOT NULL,
- CONSTRAINT [PK_StgRoot] PRIMARY KEY CLUSTERED 
-(
-	[RecordKey] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
+--CREATE TABLE [dbo].[StgRoot](
+--	[RecordKey] [int] NOT NULL,
+--	[CheckSumIndicator] [int] NOT NULL,
+--	[LotNumber] [varchar](50) NOT NULL,
+--	[LineNumber] [int] NOT NULL,
+--	[LoteDate] [date] NOT NULL,
+-- CONSTRAINT [PK_StgRoot] PRIMARY KEY CLUSTERED 
+--(
+--	[RecordKey] ASC
+--)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+--) ON [PRIMARY]
+--GO
 /****** Object:  Table [dbo].[StgTests]    Script Date: 04/11/2018 06:33:08 ******/
 SET ANSI_NULLS ON
 GO
@@ -220,19 +220,19 @@ SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[StgTests](
 	[RecordKey] [int] IDENTITY(1,1) NOT NULL,
-	[TestCategId] [int] NOT NULL,
+	[TestCategId] [varchar](50) NOT NULL,
 	[TestDate] [date] NOT NULL,
-	[ProductId] [int] NOT NULL,
+	[ProductId] [varchar](50) NOT NULL,
 	[LotNumber] [varchar](50) NOT NULL,
 	[LineNumber] [int] NOT NULL,
-	[LotDate] [datetime] NOT NULL,
+	[LotDate] [date] NOT NULL,
 	[IssueId] [int] NOT NULL,
 	[UnitQty] [int] NOT NULL,
 	[CheckSumIndicator]  AS (checksum([RecordKey],[TestCategId],[ProductId],[LotNumber],[LineNumber],[Lotdate],[IssueId],[UnitQty])),
  CONSTRAINT [PK_StgTests] PRIMARY KEY CLUSTERED 
 (
 	[RecordKey] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 90) ON [FG_Testing]
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [FG_Testing]
 GO
 
