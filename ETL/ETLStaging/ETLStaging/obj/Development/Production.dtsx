@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="11/5/2018 8:04:06 AM"
@@ -7,7 +7,7 @@
   DTS:CreatorName="Juanita\Alvaro"
   DTS:DTSID="{305AB64D-DF2D-456D-88F0-BCCCE76F507F}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LastModifiedProductVersion="15.0.0900.40"
   DTS:LocaleID="5130"
   DTS:ObjectName="Production"
   DTS:PackageType="5"
@@ -23,12 +23,7 @@
       DTS:ObjectName=".postgres">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="User ID=postgres;Initial Catalog=production;Provider=PGNP.1;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYV6Z+Z3ahES37wP6cG566wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADKEGSUK+Ua3gKCpruOOJAmXg8uOS6URnbQ3Na5iv1ITAAAAAAOgAAAAAIAACAAAAAUgmeKyVggszOIaTeuhIITX3NOxImjjr9TG/EEZRv1pSAAAACoI5PV+8ca8Bbl/t3hU/c+X6IGZd/0OajALb81RgPpd0AAAACWMiw5cj7m1xowcNEeT4HlXnVBHcod1ZJj84w6hwtMO+jMbc3xOMXpCKoj9VWiADxkiXk33Q2ZzJKUB3PuvOL1</DTS:Password>
-        </DTS:ConnectionManager>
+          DTS:ConnectionString="User ID=postgres;Initial Catalog=production;Provider=PGNP.1;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -38,12 +33,7 @@
       DTS:ObjectName="JUANITA.production.sa">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=JUANITA;User ID=sa;Initial Catalog=production;Provider=SQLOLEDB.1;Auto Translate=False;Application Name=SSIS-Package-{5B32D331-01AA-4A1D-8571-22EA27685CB1}JUANITA.production.sa;">
-          <DTS:Password
-            DTS:Name="Password"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYV6Z+Z3ahES37wP6cG566wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAVxlGE3ITI8/3FaltmapnSM6T8rGYBQ3FLWRhafPLJ5QAAAAAOgAAAAAIAACAAAADYrQwYj16Gmv7Zrgfi+T629Kmtq1AabA03CIANZr7USBAAAABd0bFLgy1fT/YVXcx67dPnQAAAADC8MGD543Q4COIv0b0eKdxuAhNzqOKDhyxkXIQghrMOrCISK7Na0uRMSx1fDVdcGKhzEj9ggDD7WUG0m5CKSOE</DTS:Password>
-        </DTS:ConnectionManager>
+          DTS:ConnectionString="Data Source=JUANITA;User ID=sa;Initial Catalog=production;Provider=SQLOLEDB.1;Auto Translate=False;Application Name=SSIS-Package-{5B32D331-01AA-4A1D-8571-22EA27685CB1}JUANITA.production.sa;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -250,7 +240,7 @@
                   dataType="System.String"
                   description="Comando SQL para ejecutar."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select lt.productid,pr.productname,ct.categoryname,li.lotid,li.lineid,lt.date,
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select lt.productid,pr.productname,ct.categoryname,li.lotid,li.lineid,lt.date,
 li.productionquantity,li.productionlost,
 li.productionamount
  from "Production".lotxlines li ,"Production".lot lt,"Production".products pr,
@@ -517,7 +507,7 @@ and lt.productid =pr.productid and pr.productcategory=ct.productcategory</proper
                   dataType="System.String"
                   description="Comando SQL para ejecutar."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."

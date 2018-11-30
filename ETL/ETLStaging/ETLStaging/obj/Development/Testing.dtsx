@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="11/4/2018 6:08:33 PM"
@@ -57,7 +57,7 @@
           <DTS:Password
             DTS:Name="pwd"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAD56xkcOcuUOAoP64By08RQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACZeZc5/H/ObWMQxiJUnXGZDuf1cIsZ++nt+I0fqoAoAQAAAAAOgAAAAAIAACAAAACvhXdvrmqlAucbDy6LrTQR62NAdP0DkUtg6147E1eF9xAAAADDMaaLclqCGXBRmggORgYRQAAAADtN174frCmiXIGNE7ImHrs64YgO8CBqc5h8XLRoamwq1WM3n89EXrRNEpAEC/3iwqx1NoXoceMPn/QT0C4etck</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAD56xkcOcuUOAoP64By08RQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB72BpbJfNLDMNopP+xomFvG2rKs0hoORh8ok8EzZMQ7AAAAAAOgAAAAAIAACAAAAAze3Ei+7MGqdgBS8AjZaGKayNQMF2FzGpHn1PjjfZD5RAAAAAQAKzpEJ+R/LYUCh6aDqERQAAAAABY6Q7Pc3SyjousI7s7Q/O/uRIZLimqV/C9FvX+srpdFBl4E44zCF9S7K7gGZ07mg9/gaxN93ICnEnvjSerFr8</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -2566,7 +2566,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="reseed StgIssues"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -2598,7 +2598,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="reseedCategory"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
