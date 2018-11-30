@@ -1,21 +1,58 @@
-﻿USE [Staging]
- GO
- 
-ALTER DATABASE [Staging] ADD FILEGROUP [FG_CategoryTest] 
-ALTER DATABASE [Staging] ADD FILEGROUP [FG_Issues] 
-ALTER DATABASE [Staging] ADD FILEGROUP [FG_Testing]
+﻿use master
+go
+drop database [Staging]
+go
+
+CREATE DATABASE [Staging]
+ CONTAINMENT = NONE
+ ON  PRIMARY 
+( NAME = N'Staging', FILENAME = N'E:\data\BasicSERVER\Staging.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB ), 
+ FILEGROUP [FG_CategoryTest] 
+( NAME = N'CategoryTest', FILENAME = N'E:\data\BasicSERVER\CategoryTest.ndf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB ), 
+ FILEGROUP [FG_Issues] 
+( NAME = N'Issues', FILENAME = N'E:\data\BasicSERVER\Issues.ndf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB ), 
+ FILEGROUP [FG_Testing] 
+( NAME = N'Testing', FILENAME = N'E:\data\BasicSERVER\Testing.ndf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB ), 
+ FILEGROUP [FGStgClaims] 
+( NAME = N'StgClaims', FILENAME = N'E:\data\BasicSERVER\FGStgClaims.ndf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB ), 
+ FILEGROUP [FGStgProducts] 
+( NAME = N'StgProducts', FILENAME = N'E:\data\BasicSERVER\StgProducts.ndf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+ LOG ON 
+( NAME = N'Staging_log', FILENAME = N'E:\data\BasicSERVER\Staging_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
 GO
-ADD FILE( NAME = N'CategoryTest', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL13.MYSQLL\MSSQL\DATA\CategoryTest.ndf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB ) 
-TO FILEGROUP [FG_CategoryTest] 
-ADD FILE( NAME = N'Issues', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL13.MYSQLL\MSSQL\DATA\Issues.ndf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
- TO FILEGROUP [FG_Issues] 
-ADD FILE( NAME = N'Testing', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL13.MYSQLL\MSSQL\DATA\Testing.ndf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
- TO FILEGROUP [FG_Testing
- GO
+
+ALTER DATABASE [Staging] SET COMPATIBILITY_LEVEL = 140
+go
+
+USE [Staging]
+-- GO
+--ALTER DATABASE [Staging] ADD FILEGROUP [FGStgClaims] 
+--ALTER DATABASE [Staging] ADD FILEGROUP [FG_CategoryTest] 
+--ALTER DATABASE [Staging] ADD FILEGROUP [FG_Issues] 
+--ALTER DATABASE [Staging] ADD FILEGROUP [FG_Testing]
+-- ALTER DATABASE [Staging] ADD FILEGROUP [FGStgProducts]
+--GO
+
+--ALTER DATABASE [Staging] 
+--ADD FILE( NAME = N'CategoryTest', FILENAME = N'E:\data\BasicSERVER\CategoryTest.ndf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB ) 
+--TO FILEGROUP [FG_CategoryTest] 
+--ALTER DATABASE [Staging] 
+--ADD FILE( NAME = N'Issues', FILENAME = N'E:\data\BasicSERVER\Issues.ndf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+-- TO FILEGROUP [FG_Issues]
+-- ALTER DATABASE [Staging]  
+--ADD FILE( NAME = N'Testing', FILENAME = N'E:\data\BasicSERVER\Testing.ndf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
+-- TO FILEGROUP [FG_Testing]
+-- GO
+
+--ALTER DATABASE [Staging] ADD FILE ( NAME = N'StgProducts', FILENAME = N'E:\data\BasicSERVER\StgProducts.ndf' , SIZE = 8192KB , FILEGROWTH = 65536KB ) TO FILEGROUP [FGStgProducts]
+--GO
+
+--ALTER DATABASE [Staging] 
+--ADD FILE (NAME = N'StgClaims', FILENAME = N'E:\data\BasicSERVER\FGStgClaims.ndf',  SIZE = 8192KB , FILEGROWTH = 65536KB )
+--TO FILEGROUP [FGStgClaims]
+--GO
  /****** Object:  Table [dbo].[StgCategoryTest]    Script Date: 15/11/2018 17:40:35 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
+
 GO
 CREATE TABLE [dbo].[StgCategoryTest](
 	[RecordKey] [int] IDENTITY(1,1) NOT NULL,
@@ -36,12 +73,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-ALTER DATABASE [Staging] ADD FILEGROUP [FGStgClaims]
-GO
-ALTER DATABASE [Staging] 
-ADD FILE (NAME = N'StgClaims', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL14.SERVERMANU2017\MSSQL\DATA\FGStgClaims.mdf',  SIZE = 8192KB , FILEGROWTH = 65536KB )
-TO FILEGROUP [FGStgClaims]
-GO
+
 
 CREATE TABLE [dbo].[StgClaims](
 	[RecordKey] [int] IDENTITY(1,1) NOT NULL,
@@ -126,7 +158,8 @@ GO
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
-GOCREATE TABLE [dbo].[StgIssues](
+GO
+CREATE TABLE [dbo].[StgIssues](
 	[RecordKey] [int] IDENTITY(1,1) NOT NULL,
 	[IssueId] [int] NOT NULL,
 	[IssueDesc] [varchar](50) NOT NULL,
@@ -142,10 +175,7 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-ALTER DATABASE [Staging] ADD FILEGROUP [FGStgProducts]
-GO
-ALTER DATABASE [Staging] ADD FILE ( NAME = N'StgProducts', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER\MSSQL\DATA\StgProducts.ndf' , SIZE = 8192KB , FILEGROWTH = 65536KB ) TO FILEGROUP [FGStgProducts]
-GO
+
 
 CREATE TABLE [dbo].[StgProducts](
 	[RecordKey] int IDENTITY(1,1),
@@ -191,7 +221,6 @@ GO
 CREATE TABLE [dbo].[StgTests](
 	[RecordKey] [int] IDENTITY(1,1) NOT NULL,
 	[TestCategId] [int] NOT NULL,
-	[TestCategNm] [varchar](50) NOT NULL,
 	[TestDate] [date] NOT NULL,
 	[ProductId] [int] NOT NULL,
 	[LotNumber] [varchar](50) NOT NULL,
@@ -199,7 +228,7 @@ CREATE TABLE [dbo].[StgTests](
 	[LotDate] [datetime] NOT NULL,
 	[IssueId] [int] NOT NULL,
 	[UnitQty] [int] NOT NULL,
-	[CheckSumIndicator]  AS (checksum([RecordKey],[TestCategId],[TestCategNm],[ProductId],[LotNumber],[LineNumber],[Lotdate],[IssueId],[UnitQty])),
+	[CheckSumIndicator]  AS (checksum([RecordKey],[TestCategId],[ProductId],[LotNumber],[LineNumber],[Lotdate],[IssueId],[UnitQty])),
  CONSTRAINT [PK_StgTests] PRIMARY KEY CLUSTERED 
 (
 	[RecordKey] ASC
