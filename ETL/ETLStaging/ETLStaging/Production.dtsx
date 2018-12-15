@@ -11,8 +11,8 @@
   DTS:LocaleID="5130"
   DTS:ObjectName="Production"
   DTS:PackageType="5"
-  DTS:VersionBuild="21"
-  DTS:VersionGUID="{C1422DB8-A638-4B57-B350-5FF319E98CF8}">
+  DTS:VersionBuild="35"
+  DTS:VersionGUID="{D3442603-D041-4833-B99D-F799B6DB1F60}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -23,11 +23,11 @@
       DTS:ObjectName=".postgres">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="User ID=postgres;Initial Catalog=production;Provider=PGNP.1;">
+          DTS:ConnectionString="User ID=postgres;Initial Catalog=production;Provider=PGNP.1;Location=192.168.1.5;">
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYV6Z+Z3ahES37wP6cG566wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADKEGSUK+Ua3gKCpruOOJAmXg8uOS6URnbQ3Na5iv1ITAAAAAAOgAAAAAIAACAAAAAUgmeKyVggszOIaTeuhIITX3NOxImjjr9TG/EEZRv1pSAAAACoI5PV+8ca8Bbl/t3hU/c+X6IGZd/0OajALb81RgPpd0AAAACWMiw5cj7m1xowcNEeT4HlXnVBHcod1ZJj84w6hwtMO+jMbc3xOMXpCKoj9VWiADxkiXk33Q2ZzJKUB3PuvOL1</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAQiQU/UCD30SUidhaFqCIgwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAC8w7jwPQBxtTWaYF5YUEClIn+wPr0A/pPHTxdJeCoxkQAAAAAOgAAAAAIAACAAAACbSLXLa+lAZr7ylkVqkiNXgEsaSas/ql5T8SxrVlNaXyAAAACyWz2HjFp8fMUPIvaPx2jNu7XCUOZE78BslGcI9P1ibkAAAADF6Ywpb3AluAAlNehYqu2QfYU0YfknZKhlI0nWjp/ZGCit8y4OgG56u+HdAhACxijf4y+b3zeoahvzZzc+0bAw</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -38,11 +38,11 @@
       DTS:ObjectName="JUANITA.production.sa">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=JUANITA;User ID=sa;Initial Catalog=production;Provider=SQLOLEDB.1;Auto Translate=False;Application Name=SSIS-Package-{5B32D331-01AA-4A1D-8571-22EA27685CB1}JUANITA.production.sa;">
+          DTS:ConnectionString="Data Source=LAB303TI-PC17;User ID=sa;Initial Catalog=Staging;Provider=SQLOLEDB.1;Auto Translate=False;Application Name=SSIS-Package-{5B32D331-01AA-4A1D-8571-22EA27685CB1}JUANITA.production.sa;">
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYV6Z+Z3ahES37wP6cG566wAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAVxlGE3ITI8/3FaltmapnSM6T8rGYBQ3FLWRhafPLJ5QAAAAAOgAAAAAIAACAAAADYrQwYj16Gmv7Zrgfi+T629Kmtq1AabA03CIANZr7USBAAAABd0bFLgy1fT/YVXcx67dPnQAAAADC8MGD543Q4COIv0b0eKdxuAhNzqOKDhyxkXIQghrMOrCISK7Na0uRMSx1fDVdcGKhzEj9ggDD7WUG0m5CKSOE</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAQiQU/UCD30SUidhaFqCIgwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACvNsWVR65F3HEjf764ib6a5bKDtHanDAhUBmPosUqV4QAAAAAOgAAAAAIAACAAAAAp+plP1ULrNQlKHTlXCtXRx01otpW+VPbUNvy1tlVXeBAAAAD3Q/DJ3GH+6+KINiXI0LgvQAAAABjXAPQrmVzK0rMnO3OT0CP//MBtRzm+UuXSCXnwQdsJHNMYxYQ/VovHX1SXRauNrRbUYsJr1QlWlLdzAv7y8KU</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -69,7 +69,8 @@
               contactInfo="Conversión de datos;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
               description="Conversión de datos"
               name="Convert data PostgreSQL"
-              usesDispositions="true">
+              usesDispositions="true"
+              validateExternalMetadata="False">
               <inputs>
                 <input
                   refId="Package\Data Migration\Convert data PostgreSQL.Inputs[Entrada de conversión de datos]"
@@ -232,6 +233,7 @@
               description="Origen de OLE DB"
               name="PostgreSQL - Production"
               usesDispositions="true"
+              validateExternalMetadata="False"
               version="7">
               <properties>
                 <property
@@ -499,6 +501,7 @@ and lt.productid =pr.productid and pr.productcategory=ct.productcategory</proper
               description="Destino de OLE DB"
               name="Sql Server - Staging"
               usesDispositions="true"
+              validateExternalMetadata="False"
               version="4">
               <properties>
                 <property
@@ -517,7 +520,7 @@ and lt.productid =pr.productid and pr.productcategory=ct.productcategory</proper
                   dataType="System.String"
                   description="Comando SQL para ejecutar."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from stgproducts</property>
                 <property
                   dataType="System.Int32"
                   description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
@@ -530,7 +533,7 @@ and lt.productid =pr.productid and pr.productcategory=ct.productcategory</proper
                   dataType="System.Int32"
                   description="Especifica el modo utilizado para obtener acceso a la base de datos."
                   name="AccessMode"
-                  typeConverter="AccessMode">0</property>
+                  typeConverter="AccessMode">3</property>
                 <property
                   dataType="System.Boolean"
                   description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Sólo se aplica si está activada la carga rápida."
@@ -542,7 +545,7 @@ and lt.productid =pr.productid and pr.productcategory=ct.productcategory</proper
                 <property
                   dataType="System.String"
                   description="Especifica opciones para usar con la carga rápida. Sólo se aplica si está activada la carga rápida."
-                  name="FastLoadOptions"></property>
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
                 <property
                   dataType="System.Int32"
                   description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Sólo se aplica si está activada la carga rápida."
@@ -745,7 +748,7 @@ and lt.productid =pr.productid and pr.productcategory=ct.productcategory</proper
         <SQLTask:SqlTaskData
           SQLTask:Connection="{5B32D331-01AA-4A1D-8571-22EA27685CB1}"
           SQLTask:BypassPrepare="False"
-          SQLTask:SqlStatementSource="DELETE FROM StgProducts" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="DELETE FROM StgProducts&#xA;&#xA;DBCC CHECKIDENT( 'StgProducts', RESEED,1)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -760,12 +763,12 @@ and lt.productid =pr.productid and pr.productcategory=ct.productcategory</proper
       DTS:To="Package\Data Migration" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
-<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
-<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
 <Objects
   Version="8">
-  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>
