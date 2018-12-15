@@ -88,6 +88,7 @@ CREATE TABLE [dbo].[StgClaims](
 	[DefectQty] [int] NOT NULL,
 	[UnitReturnQty] [int] NOT NULL,
 	[DefectId] [int] NOT NULL,
+	[ClaimDate] [date] NOT NULL
  CONSTRAINT [PK_StgClaims] PRIMARY KEY CLUSTERED 
 (
 	[RecordKey] ASC
