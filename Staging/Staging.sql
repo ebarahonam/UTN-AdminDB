@@ -147,7 +147,7 @@ CREATE TABLE [dbo].[StgInvoices](
 	[SaleAmnt]  AS ([SalePriceUnit]*[saleQty]-[DiscountAmnt]),
 	[OrderId] [int] NOT NULL,
 	[TotalCostAmnt]  AS ([SalePriceUnit]*[saleQty]),
-        DateS date not null,					      
+        DateSale date not null,					      
  CONSTRAINT [PK_StgInvoices] PRIMARY KEY CLUSTERED 
 (
 	[RecordKey] ASC
