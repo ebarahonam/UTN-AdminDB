@@ -2,28 +2,28 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>ETLStaging</Name>
-    <LastWriteTime>2018-11-15T18:03:57.1666891Z</LastWriteTime>
+    <LastWriteTime>2018-12-15T17:21:51.4036812Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>Sale.dtsx</Name>
-      <LastWriteTime>2018-11-15T05:55:02.7489639Z</LastWriteTime>
+      <LastWriteTime>2018-12-12T17:55:52.6777259Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Production.dtsx</Name>
-      <LastWriteTime>2018-11-15T05:55:28.8107994Z</LastWriteTime>
+      <LastWriteTime>2018-12-12T17:55:52.674728Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>Testing.dtsx</Name>
-      <LastWriteTime>2018-11-15T18:03:57.1457433Z</LastWriteTime>
+      <LastWriteTime>2018-12-12T17:55:52.6807229Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
-      <Name>Claim.dtsx</Name>
-      <LastWriteTime>2018-11-15T05:55:02.727023Z</LastWriteTime>
+      <Name>Claims.dtsx</Name>
+      <LastWriteTime>2018-12-15T17:21:37.7977028Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
