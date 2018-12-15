@@ -11,8 +11,8 @@
   DTS:LocaleID="5130"
   DTS:ObjectName="Testing"
   DTS:PackageType="5"
-  DTS:VersionBuild="53"
-  DTS:VersionGUID="{CE7E0583-83B4-4963-B6C2-BA61EA5E2A43}">
+  DTS:VersionBuild="67"
+  DTS:VersionGUID="{E1FEAF73-0641-4C21-BED3-9B02790772E1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -33,7 +33,7 @@
       DTS:ObjectName="Administrador de conexiones con Excel 1">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\RD\Desktop\conFormato\grupo2.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\RD\Desktop\conFormato\Tests.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -47,6 +47,280 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Administrador de conexiones de archivos planos]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{23D5AFA6-89FD-4368-AA08-3833613EC65D}"
+      DTS:ObjectName="Administrador de conexiones de archivos planos">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="3082"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\RD\Desktop\errores.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TestingId"
+              DTS:DTSID="{31BDAF90-482F-4387-8012-D0E52D2909AD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LotId"
+              DTS:DTSID="{58E29D12-FC13-4748-BA78-467FBDAD635D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Linenumber"
+              DTS:DTSID="{1D39A251-5B4D-4283-9AAC-823A225C3DA2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LotDate"
+              DTS:DTSID="{5C5ED1EF-9E93-4F43-BEF8-2FBE2EC49359}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TestingDate"
+              DTS:DTSID="{1D612F5E-A585-4074-8FF8-C5A73FF8E977}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CatId"
+              DTS:DTSID="{22F81917-86F4-4FA0-BF1C-42EA1BF6915D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="IssuesId"
+              DTS:DTSID="{8836B4AF-87DF-4DDA-B30F-13F8EEEBA9C6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UnitQty"
+              DTS:DTSID="{B41026CD-DD1B-465A-91D4-7E72A40ED85D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ProductId"
+              DTS:DTSID="{21ADCA12-F4EF-4C70-B7CF-8901C49A1CBB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Copia de LotId"
+              DTS:DTSID="{D69C6695-7701-422A-9C60-B9FE8D7A6D1E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Copia de CatId"
+              DTS:DTSID="{48C387EA-7E7E-4651-AF92-31E8729DF6DF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Copia de ProductId"
+              DTS:DTSID="{9598E0C8-E7AF-4E25-94A9-6C4AE41DCA4D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="133"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Copia de TestingDate"
+              DTS:DTSID="{75EF2240-0BD3-4577-B4C4-C9E61BF060A8}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Administrador de conexiones de archivos planos 1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{B85C2932-8CFD-4655-A5E8-8A20B3B0114C}"
+      DTS:ObjectName="Administrador de conexiones de archivos planos 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="3082"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\RD\Desktop\horros.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TestingId"
+              DTS:DTSID="{A29760C7-73EA-430C-BEAF-13EB96C274F7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LotId"
+              DTS:DTSID="{1DA995ED-D826-442D-9C91-FDDC97F4E37A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Linenumber"
+              DTS:DTSID="{A79E20CA-469A-4D59-932A-55015B5808E2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LotDate"
+              DTS:DTSID="{4B235F3F-64CA-420B-B8A5-815DF443DAA1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TestingDate"
+              DTS:DTSID="{42C85CA5-C918-484D-8CEE-88E2F104DA12}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CatId"
+              DTS:DTSID="{8A322628-6E9C-4A58-943A-704923DE5E37}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="IssuesId"
+              DTS:DTSID="{1A37BF9B-3CE4-425C-9AA6-E6C61A4A1698}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="5"
+              DTS:TextQualified="True"
+              DTS:ObjectName="UnitQty"
+              DTS:DTSID="{DE9E381D-06BA-48F2-A8EF-2F98C8ACB274}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ProductId"
+              DTS:DTSID="{708928CB-D65D-40B7-B013-77E2F113693D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Copia de LotId"
+              DTS:DTSID="{D4E702AF-0F07-4F9C-84B8-95B689100BE5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Copia de CatId"
+              DTS:DTSID="{E8FED72D-F1A8-466D-81B3-5E4236ED679E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Copia de ProductId"
+              DTS:DTSID="{AF29F121-406E-437B-9E10-239AC98C98AA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="133"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Copia de TestingDate"
+              DTS:DTSID="{079BADA0-7D0D-463A-82DC-9273AF96E8D7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorCode"
+              DTS:DTSID="{E3C0DD90-77E6-4B30-9B0A-A926E9C71220}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorColumn"
+              DTS:DTSID="{4D726DF9-B7C6-4F9C-ABFD-39F9B64D78D6}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[CData Couchbase Source.Administrator 1]"
       DTS:CreationName="ODBC"
       DTS:DTSID="{F7D96DD8-F170-4B35-81A2-86DC4C9D6229}"
@@ -57,7 +331,37 @@
           <DTS:Password
             DTS:Name="pwd"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAD56xkcOcuUOAoP64By08RQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACZeZc5/H/ObWMQxiJUnXGZDuf1cIsZ++nt+I0fqoAoAQAAAAAOgAAAAAIAACAAAACvhXdvrmqlAucbDy6LrTQR62NAdP0DkUtg6147E1eF9xAAAADDMaaLclqCGXBRmggORgYRQAAAADtN174frCmiXIGNE7ImHrs64YgO8CBqc5h8XLRoamwq1WM3n89EXrRNEpAEC/3iwqx1NoXoceMPn/QT0C4etck</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA4ijUVwKKT0OxLhbHy5gbOAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACu8LFwaitWZ+XumbAYT0XQYJBczEmVJ6HGF+oNl8sQSAAAAAAOgAAAAAIAACAAAABvh2vy2jJotDNAIcdwaO99USsUbaX+bnQwnV5F+8/hiBAAAADmoIrikMa/YRg86na8rdeoQAAAAPMN+w4H18hyxp/n68WBYt8r0xT96Ma3bBCeLJV0bAvcGnUFXHs70F1ZbDf3jje+7226fs8adopx+4PzZIlXDoU</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[EVERPC\BASICSERVER.Staging.Estudiante]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{BC292B54-4E69-4596-80EA-E046FD79E877}"
+      DTS:ObjectName="EVERPC\BASICSERVER.Staging.Estudiante">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=EVERPC\BASICSERVER;User ID=Estudiante;Initial Catalog=Staging;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA4ijUVwKKT0OxLhbHy5gbOAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABw+3XiKS9xWFfESbE3GW6T+Q7W4/WnGEVAi3eukscb7gAAAAAOgAAAAAIAACAAAABzg0bqqn3oJwHkZ7JlyPsInKRPykGAqM0fdaXSwqDU/hAAAADDnDtOXpSNpc/E9azqonSwQAAAAHVIJc6pzn1bCT4SJVoqRhj7lFVepqlL1ZseuHOqlNoZ4/IM9FTH2UXz2Kmltfh5aBpwLQLB/zotuF4X0K2pyP8</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAB303TI-PC17.Staging.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{B2ED1C7D-0C15-4198-A710-97CA30928E18}"
+      DTS:ObjectName="LAB303TI-PC17.Staging.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=LAB303TI-PC17;User ID=sa;Initial Catalog=Staging;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA4ijUVwKKT0OxLhbHy5gbOAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAWD8J1oLmxOpafY2MMhXu+HifokyHeFtsTJWPzcxH+kQAAAAAOgAAAAAIAACAAAACm8sX09abeowCzfOe8rGLOlYSrqIv3WFIjK5KpOEgnpRAAAABRF5FT162bMeWLtE9T8EMOQAAAAOqIIA0dei3WTQXTFX5xfy5qSDsfSmefI+SAaALIkrpYo/UGuynqjZ9tfYVOpiDTxC6+8wgIxxb08BIPeRPyIGI</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -69,6 +373,16 @@
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectionString="Data Source=RD-PC;Initial Catalog=Staging;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[test]"
+      DTS:CreationName="ODBC"
+      DTS:DTSID="{F88252BD-0205-46F8-A171-2EF5E90B8444}"
+      DTS:ObjectName="test">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Dsn=test;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -96,7 +410,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{8C17E2CB-1586-4B26-9FC9-AC28B839B495}"
+              SQLTask:Connection="{B2ED1C7D-0C15-4198-A710-97CA30928E18}"
               SQLTask:SqlStatementSource="delete from StgCategoryTest" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -112,7 +426,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{8C17E2CB-1586-4B26-9FC9-AC28B839B495}"
+              SQLTask:Connection="{B2ED1C7D-0C15-4198-A710-97CA30928E18}"
               SQLTask:SqlStatementSource="delete from StgIssues" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -128,7 +442,7 @@
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{8C17E2CB-1586-4B26-9FC9-AC28B839B495}"
+              SQLTask:Connection="{B2ED1C7D-0C15-4198-A710-97CA30928E18}"
               SQLTask:SqlStatementSource="delete from StgTests" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
@@ -369,8 +683,8 @@
                   <connections>
                     <connection
                       refId="Package\insert\Insert StgCategory\Destino de OLE DB.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[RD-PC.Staging]"
-                      connectionManagerRefId="Package.ConnectionManagers[RD-PC.Staging]"
+                      connectionManagerID="Package.ConnectionManagers[LAB303TI-PC17.Staging.sa]"
+                      connectionManagerRefId="Package.ConnectionManagers[LAB303TI-PC17.Staging.sa]"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
                   </connections>
@@ -954,8 +1268,8 @@
                   <connections>
                     <connection
                       refId="Package\insert\insert StgIssues\Stg Issues.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[RD-PC.Staging]"
-                      connectionManagerRefId="Package.ConnectionManagers[RD-PC.Staging]"
+                      connectionManagerID="Package.ConnectionManagers[LAB303TI-PC17.Staging.sa]"
+                      connectionManagerRefId="Package.ConnectionManagers[LAB303TI-PC17.Staging.sa]"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
                   </connections>
@@ -1508,8 +1822,8 @@
                   <connections>
                     <connection
                       refId="Package\insert\insert StgTest\Destino de OLE DB.Connections[OleDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[RD-PC.Staging]"
-                      connectionManagerRefId="Package.ConnectionManagers[RD-PC.Staging]"
+                      connectionManagerID="Package.ConnectionManagers[LAB303TI-PC17.Staging.sa]"
+                      connectionManagerRefId="Package.ConnectionManagers[LAB303TI-PC17.Staging.sa]"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
                       name="OleDbConnection" />
                   </connections>
@@ -1570,11 +1884,11 @@
                           externalMetadataColumnId="Package\insert\insert StgTest\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[LotDate]"
                           lineageId="Package\insert\insert StgTest\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[LotDate]" />
                         <inputColumn
-                          refId="Package\insert\insert StgTest\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[Copia de TestingDate]"
-                          cachedDataType="dbDate"
-                          cachedName="Copia de TestingDate"
+                          refId="Package\insert\insert StgTest\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].Columns[TestingDate]"
+                          cachedDataType="date"
+                          cachedName="TestingDate"
                           externalMetadataColumnId="Package\insert\insert StgTest\Destino de OLE DB.Inputs[Entrada de destino de OLE DB].ExternalColumns[TestDate]"
-                          lineageId="Package\insert\insert StgTest\Conversión de datos.Outputs[Salida de conversión de datos].Columns[Copia de TestingDate]" />
+                          lineageId="Package\insert\insert StgTest\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[TestingDate]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1668,7 +1982,7 @@
                     <property
                       dataType="System.String"
                       description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
-                      name="OpenRowset">Hoja2$</property>
+                      name="OpenRowset">RESULTS$</property>
                     <property
                       dataType="System.String"
                       description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
@@ -1734,6 +2048,16 @@
                           name="TesterId"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
+                          refId="Package\insert\insert StgTest\Get results.Outputs[Salida de origen de Excel].Columns[ProductId]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\insert\insert StgTest\Get results.Outputs[Salida de origen de Excel].ExternalColumns[ProductId]"
+                          length="255"
+                          lineageId="Package\insert\insert StgTest\Get results.Outputs[Salida de origen de Excel].Columns[ProductId]"
+                          name="ProductId"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
                           refId="Package\insert\insert StgTest\Get results.Outputs[Salida de origen de Excel].Columns[IssuesId]"
                           dataType="r8"
                           errorOrTruncationOperation="Conversión"
@@ -1771,16 +2095,6 @@
                           lineageId="Package\insert\insert StgTest\Get results.Outputs[Salida de origen de Excel].Columns[UnitQty]"
                           name="UnitQty"
                           truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\insert\insert StgTest\Get results.Outputs[Salida de origen de Excel].Columns[ProductId]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversión"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\insert\insert StgTest\Get results.Outputs[Salida de origen de Excel].ExternalColumns[ProductId]"
-                          length="255"
-                          lineageId="Package\insert\insert StgTest\Get results.Outputs[Salida de origen de Excel].Columns[ProductId]"
-                          name="ProductId"
-                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1803,6 +2117,11 @@
                           dataType="r8"
                           name="TesterId" />
                         <externalMetadataColumn
+                          refId="Package\insert\insert StgTest\Get results.Outputs[Salida de origen de Excel].ExternalColumns[ProductId]"
+                          dataType="wstr"
+                          length="255"
+                          name="ProductId" />
+                        <externalMetadataColumn
                           refId="Package\insert\insert StgTest\Get results.Outputs[Salida de origen de Excel].ExternalColumns[IssuesId]"
                           dataType="r8"
                           name="IssuesId" />
@@ -1820,11 +2139,6 @@
                           refId="Package\insert\insert StgTest\Get results.Outputs[Salida de origen de Excel].ExternalColumns[UnitQty]"
                           dataType="r8"
                           name="UnitQty" />
-                        <externalMetadataColumn
-                          refId="Package\insert\insert StgTest\Get results.Outputs[Salida de origen de Excel].ExternalColumns[ProductId]"
-                          dataType="wstr"
-                          length="255"
-                          name="ProductId" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -1837,6 +2151,12 @@
                           dataType="r8"
                           lineageId="Package\insert\insert StgTest\Get results.Outputs[Salida de error de origen de Excel].Columns[TestingId]"
                           name="TestingId" />
+                        <outputColumn
+                          refId="Package\insert\insert StgTest\Get results.Outputs[Salida de error de origen de Excel].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\insert\insert StgTest\Get results.Outputs[Salida de error de origen de Excel].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
                         <outputColumn
                           refId="Package\insert\insert StgTest\Get results.Outputs[Salida de error de origen de Excel].Columns[CatId]"
                           dataType="wstr"
@@ -1877,12 +2197,6 @@
                           lineageId="Package\insert\insert StgTest\Get results.Outputs[Salida de error de origen de Excel].Columns[UnitQty]"
                           name="UnitQty" />
                         <outputColumn
-                          refId="Package\insert\insert StgTest\Get results.Outputs[Salida de error de origen de Excel].Columns[ErrorCode]"
-                          dataType="i4"
-                          lineageId="Package\insert\insert StgTest\Get results.Outputs[Salida de error de origen de Excel].Columns[ErrorCode]"
-                          name="ErrorCode"
-                          specialFlags="1" />
-                        <outputColumn
                           refId="Package\insert\insert StgTest\Get results.Outputs[Salida de error de origen de Excel].Columns[ErrorColumn]"
                           dataType="i4"
                           lineageId="Package\insert\insert StgTest\Get results.Outputs[Salida de error de origen de Excel].Columns[ErrorColumn]"
@@ -1909,7 +2223,7 @@
                     <property
                       dataType="System.String"
                       description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
-                      name="OpenRowset">Hoja1$</property>
+                      name="OpenRowset">TESTING$</property>
                     <property
                       dataType="System.String"
                       description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
@@ -2516,14 +2830,14 @@
                   startId="Package\insert\insert StgTest\Ordenar.Outputs[Salida de ordenación]" />
                 <path
                   refId="Package\insert\insert StgTest.Paths[Salida de origen de Excel]"
-                  endId="Package\insert\insert StgTest\Ordenar.Inputs[Entrada de ordenación]"
-                  name="Salida de origen de Excel"
-                  startId="Package\insert\insert StgTest\Get results.Outputs[Salida de origen de Excel]" />
-                <path
-                  refId="Package\insert\insert StgTest.Paths[Salida de origen de Excel1]"
                   endId="Package\insert\insert StgTest\Ordenar 1.Inputs[Entrada de ordenación]"
                   name="Salida de origen de Excel"
                   startId="Package\insert\insert StgTest\Get Testing.Outputs[Salida de origen de Excel]" />
+                <path
+                  refId="Package\insert\insert StgTest.Paths[Salida de origen de Excel1]"
+                  endId="Package\insert\insert StgTest\Ordenar.Inputs[Entrada de ordenación]"
+                  name="Salida de origen de Excel"
+                  startId="Package\insert\insert StgTest\Get results.Outputs[Salida de origen de Excel]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -2566,12 +2880,12 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="reseed StgIssues"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{8C17E2CB-1586-4B26-9FC9-AC28B839B495}"
-              SQLTask:SqlStatementSource="DBCC CHECKIDENT('StgIssues', RESEED, 0)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:Connection="{B2ED1C7D-0C15-4198-A710-97CA30928E18}"
+              SQLTask:SqlStatementSource="DBCC CHECKIDENT('StgIssues', RESEED, 1)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -2582,12 +2896,12 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="reseed StgTest"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{8C17E2CB-1586-4B26-9FC9-AC28B839B495}"
-              SQLTask:SqlStatementSource="DBCC CHECKIDENT('StgTests', RESEED, 0)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:Connection="{B2ED1C7D-0C15-4198-A710-97CA30928E18}"
+              SQLTask:SqlStatementSource="DBCC CHECKIDENT('StgTests', RESEED, 1)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -2598,12 +2912,12 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="reseedCategory"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
-              SQLTask:Connection="{8C17E2CB-1586-4B26-9FC9-AC28B839B495}"
-              SQLTask:SqlStatementSource="DBCC CHECKIDENT('StgCategoryTest', RESEED, 0)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:Connection="{B2ED1C7D-0C15-4198-A710-97CA30928E18}"
+              SQLTask:SqlStatementSource="DBCC CHECKIDENT('StgCategoryTest', RESEED, 1)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -3137,17 +3451,13 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="128,42"
-          Id="Package\insert\insert StgTest\Ordenar 1"
-          TopLeft="227,153" />
-        <NodeLayout
           Size="136,42"
           Id="Package\insert\insert StgTest\Get Testing"
           TopLeft="229.5,58.5" />
         <NodeLayout
           Size="119,42"
           Id="Package\insert\insert StgTest\Ordenar"
-          TopLeft="426,149" />
+          TopLeft="485,168" />
         <NodeLayout
           Size="132,42"
           Id="Package\insert\insert StgTest\Get results"
@@ -3156,6 +3466,10 @@
           Size="175,42"
           Id="Package\insert\insert StgTest\Destino de OLE DB"
           TopLeft="909,420" />
+        <NodeLayout
+          Size="128,42"
+          Id="Package\insert\insert StgTest\Ordenar 1"
+          TopLeft="227,153" />
         <NodeLayout
           Size="180,42"
           Id="Package\insert\insert StgTest\Conversión de datos"
@@ -3166,6 +3480,40 @@
           TopLeft="310,338" />
         <EdgeLayout
           Id="Package\insert\insert StgTest.Paths[Salida de origen de Excel1]"
+          TopLeft="503.5,98.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="41,69.5"
+              Start="0,0"
+              End="41,62">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.75"
+                    Point2="0,34.75"
+                    Point3="4,34.75" />
+                  <mssgle:LineSegment
+                    End="37,34.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="37,34.75"
+                    Point2="41,34.75"
+                    Point3="41,38.75" />
+                  <mssgle:LineSegment
+                    End="41,62" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\insert\insert StgTest.Paths[Salida de origen de Excel]"
           TopLeft="294.25,100.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -3187,65 +3535,31 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\insert\insert StgTest.Paths[Salida de origen de Excel]"
-          TopLeft="503.5,98.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-18,50.5"
-              Start="0,0"
-              End="-18,43">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.25"
-                    Point2="0,25.25"
-                    Point3="-4,25.25" />
-                  <mssgle:LineSegment
-                    End="-14,25.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-14,25.25"
-                    Point2="-18,25.25"
-                    Point3="-18,29.25" />
-                  <mssgle:LineSegment
-                    End="-18,43" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\insert\insert StgTest.Paths[Salida de ordenación1]"
-          TopLeft="485.5,191">
+          TopLeft="544.5,210">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-46.1666666666667,147"
+              EndConnector="-105.166666666667,128"
               Start="0,0"
-              End="-46.1666666666667,139.5">
+              End="-105.166666666667,120.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,83.4858299595141" />
+                    End="0,72.1781376518218" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,83.4858299595141"
-                    Point2="0,87.4858299595141"
-                    Point3="-4,87.4858299595141" />
+                    Point1="0,72.1781376518218"
+                    Point2="0,76.1781376518218"
+                    Point3="-4,76.1781376518218" />
                   <mssgle:LineSegment
-                    End="-42.1666666666667,87.4858299595141" />
+                    End="-101.166666666667,76.1781376518218" />
                   <mssgle:CubicBezierSegment
-                    Point1="-42.1666666666667,87.4858299595141"
-                    Point2="-46.1666666666667,87.4858299595141"
-                    Point3="-46.1666666666667,91.4858299595141" />
+                    Point1="-101.166666666667,76.1781376518218"
+                    Point2="-105.166666666667,76.1781376518218"
+                    Point3="-105.166666666667,80.1781376518218" />
                   <mssgle:LineSegment
-                    End="-46.1666666666667,139.5" />
+                    End="-105.166666666667,120.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
